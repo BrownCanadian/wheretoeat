@@ -1,0 +1,55 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: #8D493A;
+    position: relative;
+    color: #8D493A;
+    background:
+      conic-gradient(from 134deg at top   ,currentColor 92deg,#0000 0) top,
+      conic-gradient(from -46deg at bottom,currentColor 92deg,#0000 0) bottom;
+    background-size: 100% 50%;
+    background-repeat: no-repeat; 
+  }
+  .loader:before {
+    content:'';
+    position: absolute;
+    inset: 0;
+    --g:currentColor 14.5px,#0000 0 calc(100% - 14.5px),currentColor 0;
+    background:
+      linear-gradient( 45deg,var(--g)),
+      linear-gradient(-45deg,var(--g));
+     animation: l7 1.5s infinite cubic-bezier(0.3,1,0,1);
+  }
+  @keyframes l7 {
+     33%  {inset:-10px;transform: rotate(0deg)}
+     66%  {inset:-10px;transform: rotate(90deg)}
+     100% {inset:0    ;transform: rotate(90deg)}
+  }
+
+  /* Override the Google Places Autocomplete dropdown background */
+  .pac-container {
+    background-color: white !important; /* Set dropdown background to white */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.pac-item {
+    background-color: white !important; /* Set background of each item to white */
+    color: black !important; /* Set text color to black */
+}
+
+.pac-item:hover {
+    background-color: #f0f0f0 !important; /* Set hover background color */
+}
+
+/* Specific styles for the part of the text that matches the query */
+.pac-item .pac-item-query {
+    color: black !important; /* Ensure matched query text is black */
+    font-weight: normal !important; /* Reset font weight if bolded */
+}
+
+/* Style for other place name text */
+.pac-item span {
+    color: black !important; /* Ensure all place names text is black */
+    background-color: transparent !important; /* Remove any background */
+}
