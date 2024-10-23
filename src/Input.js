@@ -181,7 +181,7 @@ function Input() {
       </div>
         <div className="flex justify-center">
     {/* Display restaurants */}
-    {random !== null && restaurants.length > 0 && !fastFoodChains.has(restaurants[random]) && (
+    {random !== null && restaurants.length > 0  && (
         <>
           {console.log(restaurants[random])}{" "}
           {/* Log the entire restaurant object */}
