@@ -94,6 +94,11 @@ function Input() {
     const min = 0;
     const max = len;
     const rand = Math.floor(min + Math.random() * (max - min)); // Ensures an integer
+    if (fastFoodChains.has(restaurants[rand]?.name)) {
+      // If the restaurant is a fast food chain, get another random number
+      getRandom(len);
+      return;
+    }
     setRandom(rand); // Update the state with the random number
   };
 
