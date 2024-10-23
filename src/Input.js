@@ -11,7 +11,84 @@ function Input() {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(false);
   const [show, setshow] = useState(false);
-
+  const fastFoodChains = new Set([
+    // Burger Chains
+    "McDonald's",
+    "Burger King",
+    "Wendy's",
+    "Five Guys",
+    "In-N-Out Burger",
+    "Jack in the Box",
+    "Culver's",
+    "Whataburger",
+    "Sonic Drive-In",
+    "Hardee's",
+    "Carl's Jr.",
+  
+    // Pizza Chains
+    "Pizza Hut",
+    "Domino's",
+    "Papa John's",
+    "Little Caesars",
+    "Marco's Pizza",
+    "Blaze Pizza",
+    "California Pizza Kitchen",
+    "Papa Murphy's",
+  
+    // Sandwich Chains
+    "Subway",
+    "Jersey Mike's",
+    "Jimmy John's",
+    "Firehouse Subs",
+    "Panera Bread",
+    "Quiznos",
+    "Schlotzsky's",
+  
+    // Chicken Chains
+    "KFC",
+    "Chick-fil-A",
+    "Popeyes",
+    "Raising Cane's",
+    "Zaxby's",
+    "Bojangles'",
+    "Church's Chicken",
+    "Wingstop",
+  
+    // Mexican-Inspired Chains
+    "Taco Bell",
+    "Chipotle",
+    "Qdoba",
+    "Del Taco",
+    "Moe's Southwest Grill",
+    "El Pollo Loco",
+  
+    // Coffee and Donut Chains
+    "Starbucks",
+    "Dunkin'",
+    "Tim Hortons",
+    "Krispy Kreme",
+    "Caribou Coffee",
+  
+    // Ice Cream and Dessert Chains
+    "Dairy Queen",
+    "Baskin-Robbins",
+    "Cold Stone Creamery",
+    "Freddy's Frozen Custard",
+    "Orange Julius",
+  
+    // Other Fast Casual & Miscellaneous Chains
+    "Arby's",
+    "A&W Restaurants",
+    "Boston Market",
+    "Shake Shack",
+    "Freddy's Frozen Custard & Steakburgers",
+    "Checkers",
+    "Rally's",
+    "Steak 'n Shake",
+    "Noodles & Company",
+    "Jollibee",
+    "Panda Express"
+  ]);
   const [random, setRandom] = useState(null);
   const getRandom = (len) => {
     const min = 0;
@@ -104,7 +181,7 @@ function Input() {
       </div>
         <div className="flex justify-center">
     {/* Display restaurants */}
-    {random !== null && restaurants.length > 0 && (
+    {random !== null && restaurants.length > 0 && !fastFoodChains.has(restaurants[random]) && (
         <>
           {console.log(restaurants[random])}{" "}
           {/* Log the entire restaurant object */}
